@@ -1,0 +1,39 @@
+                           ┌─────────────────────────────────────────────┐
+                           │         ContenidoAudiovisual (abstract)     │
+                           ├─────────────────────────────────────────────┤
+                           │ - id: int                                   │
+                           │ - titulo: String                            │
+                           │ - duracionEnMinutos: int                    │
+                           │ - genero: String                            │
+                           │ - contar: static int                        │
+                           ├─────────────────────────────────────────────┤
+                           │ + get/setTitulo(String): void               │
+                           │ + get/setDuracionEnMinutos(int): void       │
+                           │ + get/setGenero(String): void               │
+                           │ + getId(): int                              │
+                           │ + mostrarDetalles(): void (abstract)        │
+                           └─────────────────────────────────────────────┘
+                                       ▲
+                 ┌─────────────────────┼─────────────────────┐
+                 │                     │                     │
+          ┌──────────────┐      ┌───────────────┐      ┌────────────────┐
+          │   Pelicula   │      │   SerieDeTV   │      │   Documental   │
+          ├──────────────┤      ├───────────────┤      ├────────────────┤
+          │ - estudio: String   │ - temporadas: List<Temporada> │ - tema: String │
+          │ - actores: List<Actor> │                       │ - investigador: Investigador │
+          ├──────────────┤      ├───────────────┤      ├────────────────┤
+          │ + agregarActor(Actor): void │ + agregarTemporada(Temporada): void │ + mostrarDetalles(): void │
+          │ + mostrarDetalles(): void   │ + mostrarDetalles(): void           │                          │
+          └──────────────┘      └───────────────┘      └────────────────┘
+               │  ▲                   │  ▲                    │  ▲
+     Asociación │  │ Agregación        │  │ Composición        │  │ Agregación
+               ▼  │                   ▼  │                    ▼  │
+        ┌──────────────┐        ┌──────────────┐         ┌──────────────┐
+        │    Actor     │        │  Temporada   │         │ Investigador │
+        ├──────────────┤        ├──────────────┤         ├──────────────┤
+        │ - nombre: String │    │ - numero: int │        │ - nombre: String │
+        │ - edad: int      │    │ - episodios: int │     │ - especialidad: String │
+        ├──────────────┤    ├──────────────┤         ├──────────────┤
+        │ + getNombre(): String │ + getNumero(): int │ + getNombre(): String │
+        │ + getEdad(): int      │ + getEpisodios(): int │ + getEspecialidad(): String │
+        └──────────────┘        └──────────────┘         └──────────────┘
