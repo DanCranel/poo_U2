@@ -101,6 +101,3 @@ Entorno de desarrollo: Eclipse IDE
 
 Daniel Morales
 Estudiante de Ingeniería en Software – Universidad Politécnica Salesiana
-
-¿Quieres que te lo deje ya en formato Markdown (.md) con emojis, encabezados y espaciado listos para pegar directamente en GitHub (con todo el formato correcto)?
-Puedo generarte el archivo README.md completo listo para subir.
